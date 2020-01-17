@@ -6,7 +6,7 @@ import (
 	"strings"
 	"github.com/spf13/cobra"
 	"github.com/spf13/viper"
-	"***REMOVED***/nutanix-image/get"
+	"github.com/timothyrr/nutanix-image/get"
 )
 
 // nutanixImageGetCmd represents the get command

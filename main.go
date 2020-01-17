@@ -1,6 +1,6 @@
 package main
 
-import "***REMOVED***/nutanix-image/cmd"
+import "github.com/timothyrr/nutanix-image/cmd"
 
 func main() {
   cmd.Execute()

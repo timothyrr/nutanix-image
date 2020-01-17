@@ -4,8 +4,8 @@ import (
 	"strings"
 	"github.com/spf13/cobra"
 	"github.com/spf13/viper"
-	"***REMOVED***/nutanix-image/get"
-	"***REMOVED***/nutanix-image/create"
+	"github.com/timothyrr/nutanix-image/get"
+	"github.com/timothyrr/nutanix-image/create"
 )
 
 // nutanixImageUploadCmd represents the create command

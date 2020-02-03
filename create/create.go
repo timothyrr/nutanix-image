@@ -1,15 +1,15 @@
 package create
 
 import (
-	"crypto/tls"
-	"fmt"
-	"log"
-	"io/ioutil"
+    "crypto/tls"
+    "fmt"
+    "log"
+    "io/ioutil"
     "time"
 
     "github.com/terraform-providers/terraform-provider-nutanix/utils"
-	"github.com/go-resty/resty/v2"
-	v3 "github.com/terraform-providers/terraform-provider-nutanix/client/v3"
+    "github.com/go-resty/resty/v2"
+    v3 "github.com/terraform-providers/terraform-provider-nutanix/client/v3"
 )
 
 // NutanixClient represents Nutanix API client

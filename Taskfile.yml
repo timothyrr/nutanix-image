@@ -10,5 +10,5 @@ tasks:
   build-rpm:
     cmds:
       - task: build
-      - fpm -f -s dir -t rpm -n nutanix-image -v "$(./bin/nutanix-image --version | grep -o -E 'v(0|[1-9]\d*)\.(0|[1-9]\d*)\.(0|[1-9]\d*)(-[a-zA-Z\d][-a-zA-Z.\d]*)?(\+[a-zA-Z\d][-a-zA-Z.\d]*)?$' | sed 's/^v//')" --iteration "$(date '+%Y%m%d')git$(git rev-parse --short HEAD)" -a native --rpm-summary 'CLI tool for uploading/downloading images in Nutanix' --url 'https://***REMOVED***/projects/INFAPP/repos/nutanix-image/browse' -m '***REMOVED***' --vendor '' bin/nutanix-image=/usr/local/bin/nutanix-image
+      - fpm -f -s dir -t rpm -n nutanix-image -v "$(./bin/nutanix-image --version | grep -o -E 'v(0|[1-9]\d*)\.(0|[1-9]\d*)\.(0|[1-9]\d*)(-[a-zA-Z\d][-a-zA-Z.\d]*)?(\+[a-zA-Z\d][-a-zA-Z.\d]*)?$' | sed 's/^v//')" --iteration "$(date '+%Y%m%d')git$(git rev-parse --short HEAD)" -a native --rpm-summary 'CLI tool for uploading/downloading images in Nutanix' --url 'https://github.com/timothyrr/nutanix-image' -m '***REMOVED***' --vendor '' bin/nutanix-image=/usr/local/bin/nutanix-image
 

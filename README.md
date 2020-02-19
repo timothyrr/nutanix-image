@@ -60,7 +60,7 @@ Ensure Golang 1.11+ is installed and GO111MODULE is set to `on`.
 
 Clone the repo
 ```sh
-$ git clone https://***REMOVED***/nutanix-image.git
+$ git clone https://github.com/timothyrr/nutanix-image.git
 $ cd ./nutanix-image
 ```
 

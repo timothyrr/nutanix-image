@@ -1,4 +1,4 @@
-module ***REMOVED***/nutanix-image
+module github.com/timothyrr/nutanix-image
 
 go 1.12
 

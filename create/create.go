@@ -4,8 +4,8 @@ import (
     "crypto/tls"
     "fmt"
     "log"
-    "io/ioutil"
     "time"
+    "os"
 
     "github.com/terraform-providers/terraform-provider-nutanix/utils"
     "github.com/go-resty/resty/v2"
@@ -89,15 +89,24 @@ func (c *NutanixClient) CreateImage(name string) (interface{}, error) {
 
 // Upload an image to Nutanix
 func (c *NutanixClient) UploadImage(uuid string, source string) error {
-	fileBytes, err := ioutil.ReadFile(source)
+	f, err := os.Open(source)
 	if err != nil {
-		return fmt.Errorf("error: Cannot read file %s", err)
+		log.Fatal(err)
+	}
+	defer f.Close()
+
+	// get the file info
+	fileInfo, err := f.Stat()
+	if err != nil {
+		log.Fatal(err)
 	}
 
 	response, err := c.R().
-	    SetHeader("Content-Type", "application/octet-stream").
-	    SetBody(fileBytes).
-	    Put(fmt.Sprintf("/images/%s/file", uuid))
+		SetBody(f).
+		SetHeader("Content-Type", "application/octet-stream").
+		SetHeader("Content-Length", fmt.Sprintf("%v", fileInfo.Size())).
+		Put(fmt.Sprintf("/images/%s/file", uuid))
+
 	if err != nil {
 		log.Fatal(err)
 	}
